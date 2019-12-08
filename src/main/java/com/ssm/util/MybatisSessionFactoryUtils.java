@@ -1,4 +1,4 @@
-package com.util;
+package com.ssm.util;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
