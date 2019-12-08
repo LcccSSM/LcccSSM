@@ -61,6 +61,28 @@
         <property name="resolveLazily" value="true"/>
     </bean>
 
+    <!--但是，从spring3.1开始DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter的使用已经过时-->
+    <!--spring3.1开始我们应该用RequestMappingHandlerMapping来替换DefaultAnnotationHandlerMapping，-->
+    <!--spring3.1开始我们应该用用RequestMappingHandlerAdapter来替换AnnotationMethodHandlerAdapter-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJackson2HttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="mappingJackson2HttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <!--处理中文乱码以及避免IE执行AJAX时，返回JSON出现下载文件-->
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+                <value>text/json;charset=UTF-8</value>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
 
 
 </beans>

@@ -1,8 +1,5 @@
 package com.ssm.model;
 
-import lombok.ToString;
-
-@ToString
 public class SysDict {
     private Long did;
 
@@ -12,13 +9,16 @@ public class SysDict {
 
     private String dcontent;
 
+    private Integer dintro;
+
     private Integer dstate;
 
-    public SysDict(Long did, String dtitle, String dtype, String dcontent, Integer dstate) {
+    public SysDict(Long did, String dtitle, String dtype, String dcontent, Integer dintro, Integer dstate) {
         this.did = did;
         this.dtitle = dtitle;
         this.dtype = dtype;
         this.dcontent = dcontent;
+        this.dintro = dintro;
         this.dstate = dstate;
     }
 
@@ -56,6 +56,14 @@ public class SysDict {
 
     public void setDcontent(String dcontent) {
         this.dcontent = dcontent;
+    }
+
+    public Integer getDintro() {
+        return dintro;
+    }
+
+    public void setDintro(Integer dintro) {
+        this.dintro = dintro;
     }
 
     public Integer getDstate() {

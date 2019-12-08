@@ -7,11 +7,12 @@
       <arg column="dtitle" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="dtype" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="dcontent" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="dintro" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="dstate" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    did, dtitle, dtype, dcontent, dstate
+    did, dtitle, dtype, dcontent, dintro, dstate
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -19,15 +20,22 @@
     from t_sys_dict
     where did = #{did,jdbcType=BIGINT}
   </select>
+  <select id="ByDtypeList" resultType="com.ssm.model.SysDict">
+    SELECT <include refid="Base_Column_List"/>
+    FROM t_sys_dict
+    WHERE dtype LIKE =#{dtype}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_sys_dict
     where did = #{did,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.ssm.model.SysDict" >
     insert into t_sys_dict (did, dtitle, dtype, 
-      dcontent, dstate)
+      dcontent, dintro, dstate
+      )
     values (#{did,jdbcType=BIGINT}, #{dtitle,jdbcType=VARCHAR}, #{dtype,jdbcType=VARCHAR}, 
-      #{dcontent,jdbcType=VARCHAR}, #{dstate,jdbcType=INTEGER})
+      #{dcontent,jdbcType=VARCHAR}, #{dintro,jdbcType=INTEGER}, #{dstate,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ssm.model.SysDict" >
     insert into t_sys_dict
@@ -43,6 +51,9 @@
       </if>
       <if test="dcontent != null" >
         dcontent,
+      </if>
+      <if test="dintro != null" >
+        dintro,
       </if>
       <if test="dstate != null" >
         dstate,
@@ -61,6 +72,9 @@
       <if test="dcontent != null" >
         #{dcontent,jdbcType=VARCHAR},
       </if>
+      <if test="dintro != null" >
+        #{dintro,jdbcType=INTEGER},
+      </if>
       <if test="dstate != null" >
         #{dstate,jdbcType=INTEGER},
       </if>
@@ -78,6 +92,9 @@
       <if test="dcontent != null" >
         dcontent = #{dcontent,jdbcType=VARCHAR},
       </if>
+      <if test="dintro != null" >
+        dintro = #{dintro,jdbcType=INTEGER},
+      </if>
       <if test="dstate != null" >
         dstate = #{dstate,jdbcType=INTEGER},
       </if>
@@ -89,6 +106,7 @@
     set dtitle = #{dtitle,jdbcType=VARCHAR},
       dtype = #{dtype,jdbcType=VARCHAR},
       dcontent = #{dcontent,jdbcType=VARCHAR},
+      dintro = #{dintro,jdbcType=INTEGER},
       dstate = #{dstate,jdbcType=INTEGER}
     where did = #{did,jdbcType=BIGINT}
   </update>

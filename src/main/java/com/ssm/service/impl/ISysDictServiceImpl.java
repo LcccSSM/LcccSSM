@@ -2,16 +2,17 @@ package com.ssm.service.impl;
 
 import com.ssm.mapper.SysDictMapper;
 import com.ssm.model.SysDict;
-import com.ssm.service.ISysDictMapper;
+import com.ssm.service.ISysDictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class ISysDictMapperImpl implements ISysDictMapper {
+public class ISysDictServiceImpl implements ISysDictService {
 
     @Autowired
     private SysDictMapper sysDictMapper;
-
 
     @Override
     public int deleteByPrimaryKey(Long did) {
@@ -41,5 +42,10 @@ public class ISysDictMapperImpl implements ISysDictMapper {
     @Override
     public int updateByPrimaryKey(SysDict record) {
         return sysDictMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<SysDict> ByDtypeList(String dtype) {
+        return sysDictMapper.ByDtypeList(dtype);
     }
 }

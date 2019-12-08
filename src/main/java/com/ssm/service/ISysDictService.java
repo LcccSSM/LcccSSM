@@ -2,7 +2,9 @@ package com.ssm.service;
 
 import com.ssm.model.SysDict;
 
-public interface ISysDictMapper {
+import java.util.List;
+
+public interface ISysDictService {
     int deleteByPrimaryKey(Long did);
 
     int insert(SysDict record);
@@ -14,4 +16,6 @@ public interface ISysDictMapper {
     int updateByPrimaryKeySelective(SysDict record);
 
     int updateByPrimaryKey(SysDict record);
+
+    List<SysDict> ByDtypeList(String dtype);
 }

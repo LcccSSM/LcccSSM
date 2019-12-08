@@ -1,9 +1,9 @@
 package com.ssm.mapper;
 
 import com.ssm.model.SysDict;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import java.util.List;
+
 public interface SysDictMapper {
     int deleteByPrimaryKey(Long did);
 
@@ -16,4 +16,6 @@ public interface SysDictMapper {
     int updateByPrimaryKeySelective(SysDict record);
 
     int updateByPrimaryKey(SysDict record);
+
+    List<SysDict> ByDtypeList(String dtype);
 }
