@@ -2,6 +2,7 @@ package com.ssm.mapper;
 
 import com.ssm.model.SysDict;
 
+import java.awt.print.Book;
 import java.util.List;
 
 public interface SysDictMapper {
@@ -18,4 +19,9 @@ public interface SysDictMapper {
     int updateByPrimaryKey(SysDict record);
 
     List<SysDict> ByDtypeList(String dtype);
+
+    List<SysDict> listAll();
+
+    List<SysDict> listByPage(SysDict dict);
+
 }

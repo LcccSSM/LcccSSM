@@ -7,26 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e33a44a9-2d3e-4107-82cb-a3e733f82cf3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.rebel.xml.bak" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/controller/DictController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/util/JsonData.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/util/WriteJson.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/util/CorsFilter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/util/EncodingFiter.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/LcccSSM.iml" afterPath="$PROJECT_DIR$/LcccSSM.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/controller/DictController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/controller/DictController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/model/SysDict.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/model/SysDict.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictMapperImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/rebel.xml" afterPath="$PROJECT_DIR$/src/main/resources/rebel.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/base.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/ctx.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/head.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/taglib.jsp" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,12 +47,16 @@
       <file leaf-file-name="ISysDictServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+            <state relative-caret-position="684">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1221#1222#0" expanded="true" />
-                <element signature="e#1276#1277#0" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1306#1307#0" expanded="true" />
+                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="e#1404#1405#0" expanded="true" />
+                <element signature="e#1490#1491#0" expanded="true" />
+                <element signature="e#1543#1544#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +65,8 @@
       <file leaf-file-name="ISysDictService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="575">
+              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,8 +77,8 @@
       <file leaf-file-name="DictController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/controller/DictController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,11 +86,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
+      <file leaf-file-name="SysDict.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/model/SysDict.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+            <state relative-caret-position="138">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CorsFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/CorsFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -104,8 +109,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1748">
-              <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="230">
+              <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -114,16 +119,17 @@
       <file leaf-file-name="SysDictMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+            <state relative-caret-position="828">
+              <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
-                <marker date="1575792188820" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
-                <marker date="1575792188820" expanded="true" signature="1150:1243" ph="SELECT FROM t_sys_dict" />
-                <marker date="1575792188820" expanded="true" signature="1327:1388" ph="delete from t_sys_dict... " />
-                <marker date="1575792188820" expanded="true" signature="1467:1741" ph="insert into t_sys_dict... " />
-                <marker date="1575792188820" expanded="true" signature="1829:2821" ph="insert into t_sys_dict... " />
-                <marker date="1575792188820" expanded="true" signature="2945:3481" ph="update t_sys_dict... " />
-                <marker date="1575792188820" expanded="true" signature="3572:3846" ph="update t_sys_dict... " />
+                <marker date="1575802792105" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
+                <marker date="1575802792105" expanded="true" signature="1150:1242" ph="SELECT FROM t_sys_dict" />
+                <marker date="1575802792105" expanded="true" signature="1318:1402" ph="SELECT FROM t_sys_dict" />
+                <marker date="1575802792105" expanded="true" signature="1519:1737" ph="SELECT FROM t_sys_dict" />
+                <marker date="1575802792105" expanded="true" signature="1822:1883" ph="delete from t_sys_dict... " />
+                <marker date="1575802792105" expanded="true" signature="1962:2236" ph="insert into t_sys_dict... " />
+                <marker date="1575802792105" expanded="true" signature="3440:3976" ph="update t_sys_dict... " />
+                <marker date="1575802792105" expanded="true" signature="4067:4341" ph="update t_sys_dict... " />
               </folding>
             </state>
           </provider>
@@ -132,8 +138,8 @@
       <file leaf-file-name="SysDictMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="552">
+              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,13 +176,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ssm/util/WriteJson.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssm/model/SysDict.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssm/util/CorsFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssm/util/EncodingFiter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ssm/controller/DictController.java" />
       </list>
     </option>
@@ -228,9 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -350,6 +356,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,18 +368,18 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.ssm.service.impl" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.ssm.service" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Y2\Mybatis\Mybatis\LcccSSM\LcccSSM\src\main\java\com\ssm\util" />
       <recent name="F:\Y2\Mybatis\Mybatis\LcccSSM\LcccSSM\src\main\webapp" />
       <recent name="F:\Y2\Mybatis\Mybatis\LcccSSM\LcccSSM\src\main\webapp\WEB-INF" />
       <recent name="F:\Y2\Mybatis\Mybatis\LcccSSM\LcccSSM\src\main" />
       <recent name="F:\Y2\Mybatis\Mybatis\LcccSSM\LcccSSM\src\main\java\com" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ssm.service" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ssm.service.impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -581,7 +589,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75170845" sideWeight="0.50858366" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46697038" sideWeight="0.49785408" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23348519" sideWeight="0.49785408" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38041002" sideWeight="0.4914163" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -615,7 +623,8 @@
     <MESSAGE value="resources文件" />
     <MESSAGE value="字典方法类" />
     <MESSAGE value="字典实体类" />
-    <option name="LAST_COMMIT_MESSAGE" value="字典实体类" />
+    <MESSAGE value="字典工具类-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="字典工具类-2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -624,32 +633,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="66" lean-forward="false" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-          <folding>
-            <marker date="1575792188820" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
-            <marker date="1575792188820" expanded="true" signature="1150:1243" ph="SELECT FROM t_sys_dict" />
-            <marker date="1575792188820" expanded="true" signature="1327:1388" ph="delete from t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="1467:1741" ph="insert into t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="1829:2821" ph="insert into t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="2945:3481" ph="update t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="3572:3846" ph="update t_sys_dict... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -672,8 +655,12 @@
           <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -730,9 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,13 +722,14 @@
         <state relative-caret-position="552">
           <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
           <folding>
-            <marker date="1575792188820" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
-            <marker date="1575792188820" expanded="true" signature="1150:1243" ph="SELECT FROM t_sys_dict" />
-            <marker date="1575792188820" expanded="true" signature="1327:1388" ph="delete from t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="1467:1741" ph="insert into t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="1829:2821" ph="insert into t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="2945:3481" ph="update t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="3572:3846" ph="update t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1150:1242" ph="SELECT FROM t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1318:1402" ph="SELECT FROM t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1519:1737" ph="SELECT FROM t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1822:1883" ph="delete from t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="1962:2236" ph="insert into t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="3440:3976" ph="update t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="4067:4341" ph="update t_sys_dict... " />
           </folding>
         </state>
       </provider>
@@ -808,8 +790,12 @@
           <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -860,8 +846,12 @@
           <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,13 +904,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/ctx.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/ctx.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -932,19 +916,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="295" column="30" lean-forward="true" selection-start-line="295" selection-start-column="30" selection-end-line="295" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/model/SysDict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
@@ -952,48 +927,6 @@
         <state relative-caret-position="396">
           <caret line="72" column="20" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="72" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/JsonData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/WriteJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1029,44 +962,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/LcccSSM_war_exploded2/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-          <folding>
-            <marker date="1575792188820" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
-            <marker date="1575792188820" expanded="true" signature="1150:1243" ph="SELECT FROM t_sys_dict" />
-            <marker date="1575792188820" expanded="true" signature="1327:1388" ph="delete from t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="1467:1741" ph="insert into t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="1829:2821" ph="insert into t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="2945:3481" ph="update t_sys_dict... " />
-            <marker date="1575792188820" expanded="true" signature="3572:3846" ph="update t_sys_dict... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/LcccSSM_war_exploded2/index.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+          <caret line="9" column="63" lean-forward="false" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -1076,24 +976,116 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/EncodingFiter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/CorsFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="230">
+          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/model/SysDict.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <marker date="1575802792105" expanded="true" signature="963:1070" ph="select from t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1150:1242" ph="SELECT FROM t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1318:1402" ph="SELECT FROM t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1519:1737" ph="SELECT FROM t_sys_dict" />
+            <marker date="1575802792105" expanded="true" signature="1822:1883" ph="delete from t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="1962:2236" ph="insert into t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="3440:3976" ph="update t_sys_dict... " />
+            <marker date="1575802792105" expanded="true" signature="4067:4341" ph="update t_sys_dict... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/mapper/SysDictMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/service/ISysDictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/service/impl/ISysDictServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1306#1307#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/WriteJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/util/JsonData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ssm/controller/DictController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="293">
+          <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

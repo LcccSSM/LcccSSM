@@ -3,6 +3,7 @@ package com.ssm.service.impl;
 import com.ssm.mapper.SysDictMapper;
 import com.ssm.model.SysDict;
 import com.ssm.service.ISysDictService;
+import com.ssm.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,4 +49,15 @@ public class ISysDictServiceImpl implements ISysDictService {
     public List<SysDict> ByDtypeList(String dtype) {
         return sysDictMapper.ByDtypeList(dtype);
     }
+
+    @Override
+    public List<SysDict> listAll() {
+        return sysDictMapper.listAll();
+    }
+
+    @Override
+    public List<SysDict> listByPage(SysDict dict, PageBean pageBean) {
+        return sysDictMapper.listByPage(dict);
+    }
+
 }

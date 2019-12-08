@@ -23,7 +23,21 @@
   <select id="ByDtypeList" resultType="com.ssm.model.SysDict">
     SELECT <include refid="Base_Column_List"/>
     FROM t_sys_dict
-    WHERE dtype LIKE =#{dtype}
+    WHERE dtype LIKE #{dtype}
+  </select>
+  <select id="listAll" resultType="com.ssm.model.SysDict">
+    SELECT <include refid="Base_Column_List"/>
+    FROM t_sys_dict ORDER BY dtype,dintro
+  </select>
+  <select id="listByPage" resultType="com.ssm.model.SysDict" parameterType="com.ssm.model.SysDict">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM t_sys_dict
+    <if test="null != dtype and '' !=dtype or null != dtitle and '' !=dtitle">
+      AND book_name LIKE #{bookName}
+    </if>
+    ORDER BY dtype,dintro
+
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_sys_dict
