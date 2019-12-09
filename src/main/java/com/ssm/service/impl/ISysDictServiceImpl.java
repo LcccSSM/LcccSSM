@@ -57,7 +57,12 @@ public class ISysDictServiceImpl implements ISysDictService {
 
     @Override
     public List<SysDict> listByPage(SysDict dict, PageBean pageBean) {
-        return sysDictMapper.listByPage(dict);
+        return this.sysDictMapper.listByPage(dict);
+    }
+
+    @Override
+    public int ByTypeMAXID(String dtype) {
+        return sysDictMapper.ByTypeMAXID(dtype);
     }
 
 }

@@ -1,10 +1,11 @@
 package com.ssm.mapper;
 
 import com.ssm.model.SysDict;
+import org.springframework.stereotype.Repository;
 
-import java.awt.print.Book;
 import java.util.List;
 
+@Repository
 public interface SysDictMapper {
     int deleteByPrimaryKey(Long did);
 
@@ -18,10 +19,15 @@ public interface SysDictMapper {
 
     int updateByPrimaryKey(SysDict record);
 
+    //根据类型查询
     List<SysDict> ByDtypeList(String dtype);
 
     List<SysDict> listAll();
 
+    //分页格式
     List<SysDict> listByPage(SysDict dict);
+
+    //返回单个类型的最大序号
+    int ByTypeMAXID(String dtype);
 
 }
