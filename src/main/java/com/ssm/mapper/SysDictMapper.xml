@@ -49,6 +49,9 @@
   <select id="ByTypeMAXID" resultType="int">
     select MAX(dintro)+1 from t_sys_dict where dtype = #{dtype}
   </select>
+  <select id="ByType" resultType="string">
+    SELECT dcontent FROM t_sys_dict WHERE dtype = #{dtype} AND dintro = #{dintro}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_sys_dict
     where did = #{did,jdbcType=BIGINT}

@@ -22,6 +22,9 @@ public interface SysDictMapper {
     //根据类型查询
     List<SysDict> ByDtypeList(String dtype);
 
+    //根据类型以及序号返回详细数据
+    String ByType(String dtype,int dintro);
+
     List<SysDict> listAll();
 
     //分页格式

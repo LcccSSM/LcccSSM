@@ -84,6 +84,16 @@ public class DictController {
         return i;
     }
 
+    @RequestMapping("/Dict_ByDtype")
+    @ResponseBody
+    public String ByDtype(String dtype,int dintro){
+
+        String intro = sysDictService.ByType(dtype, dintro);
+
+        return intro;
+
+    }
+
     @RequestMapping("/Dict_Merge")
     @ResponseBody
     public int merge(SysDict sysDict){

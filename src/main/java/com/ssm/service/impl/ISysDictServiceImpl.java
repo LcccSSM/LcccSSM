@@ -51,6 +51,11 @@ public class ISysDictServiceImpl implements ISysDictService {
     }
 
     @Override
+    public String ByType(String dtype, int dintro) {
+        return sysDictMapper.ByType(dtype,dintro);
+    }
+
+    @Override
     public List<SysDict> listAll() {
         return sysDictMapper.listAll();
     }
