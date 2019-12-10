@@ -66,19 +66,39 @@ public class DictController {
 
     @RequestMapping("/Dict_ByTypeMAXID")
     @ResponseBody
-    public int ByTypeMAXID(String dtype){
+    public Map ByTypeMAXID(String dtype){
+        JsonData jsonData = new JsonData();
 
         int maxid = sysDictService.ByTypeMAXID(dtype);
-
-        return maxid;
+        jsonData.setResult(maxid);
+        return jsonData;
     }
 
     @RequestMapping("/Dict_Add")
     @ResponseBody
     public int addDict(SysDict sysDict){
+        int maxid = sysDictService.ByTypeMAXID(sysDict.getDtype());
+        sysDict.setDintro(maxid);
         int i = sysDictService.insertSelective(sysDict);
 
         return i;
+    }
+
+    @RequestMapping("/Dict_Merge")
+    @ResponseBody
+    public int merge(SysDict sysDict){
+        if (null!=sysDict.getDid()){
+            int b = sysDictService.updateByPrimaryKeySelective(sysDict);
+
+            return (b+1);
+        }
+        int maxid = sysDictService.ByTypeMAXID(sysDict.getDtype());
+        sysDict.setDintro(maxid);
+        int i = sysDictService.insertSelective(sysDict);
+
+        return i;
+
+
     }
 
 
