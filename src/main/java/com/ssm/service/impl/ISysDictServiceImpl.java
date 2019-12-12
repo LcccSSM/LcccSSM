@@ -51,13 +51,23 @@ public class ISysDictServiceImpl implements ISysDictService {
     }
 
     @Override
+    public String ByType(String dtype, int dintro) {
+        return sysDictMapper.ByType(dtype,dintro);
+    }
+
+    @Override
     public List<SysDict> listAll() {
         return sysDictMapper.listAll();
     }
 
     @Override
     public List<SysDict> listByPage(SysDict dict, PageBean pageBean) {
-        return sysDictMapper.listByPage(dict);
+        return this.sysDictMapper.listByPage(dict);
+    }
+
+    @Override
+    public int ByTypeMAXID(String dtype) {
+        return sysDictMapper.ByTypeMAXID(dtype);
     }
 
 }
