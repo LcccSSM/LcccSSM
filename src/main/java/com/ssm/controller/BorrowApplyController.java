@@ -42,10 +42,42 @@ public class BorrowApplyController {
         jsonData.setPage(pageInfo.getPages());
         jsonData.setRows(pageInfo.getPageNum());
 
-
         return jsonData;
 
     }
+
+
+    @RequestMapping("/loan_ByAdd")
+    @ResponseBody
+    public int loanAdd(BorrowApply borrowApply){
+
+        borrowApply.setAddtime(System.currentTimeMillis()+"");
+
+        int i = borrowApplyService.insertSelective(borrowApply);
+
+        return i;
+    }
+
+
+    @RequestMapping("/loan_ByDel")
+    @ResponseBody
+    public int loanDel(int jid){
+
+        int i = borrowApplyService.deleteByPrimaryKey(jid);
+
+        return i;
+
+    }
+
+
+    @RequestMapping("/loan_ByUpdate")
+    @ResponseBody
+    public int ByUpdate(BorrowApply borrowApply){
+
+        int i = borrowApplyService.updateByPrimaryKeySelective(borrowApply);
+        return i;
+    }
+
 
 
 
