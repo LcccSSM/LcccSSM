@@ -1,4 +1,4 @@
-package com.util;
+package com.ssm.util;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
