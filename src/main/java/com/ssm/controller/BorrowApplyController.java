@@ -75,6 +75,7 @@ public class BorrowApplyController {
     public int ByUpdate(BorrowApply borrowApply){
 
         int i = borrowApplyService.updateByPrimaryKeySelective(borrowApply);
+
         return i;
     }
 
