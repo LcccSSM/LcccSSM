@@ -39,6 +39,7 @@
     <shiro-version>1.2.5</shiro-version>
     <!--阿里云-->
     <aliyun-version>4.4.3</aliyun-version>
+    <aliyun2-version>4.0.3</aliyun2-version>
 
   </properties>
 
@@ -335,6 +336,83 @@
       <artifactId>aliyun-java-sdk-core</artifactId>
       <version>${aliyun-version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>${aliyun2-version}</version>
+    </dependency>
+
+
+
+
+
+
+    <dependency>
+
+      <groupId>com.alibaba</groupId>
+
+      <artifactId>fastjson</artifactId>
+
+      <version>1.2.15</version>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>org.apache.httpcomponents</groupId>
+
+      <artifactId>httpclient</artifactId>
+
+      <version>4.2.1</version>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>org.apache.httpcomponents</groupId>
+
+      <artifactId>httpcore</artifactId>
+
+      <version>4.2.1</version>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>commons-lang</groupId>
+
+      <artifactId>commons-lang</artifactId>
+
+      <version>2.6</version>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>org.eclipse.jetty</groupId>
+
+      <artifactId>jetty-util</artifactId>
+
+      <version>9.3.7.v20160115</version>
+
+    </dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   </dependencies>

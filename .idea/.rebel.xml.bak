@@ -7,13 +7,13 @@
 <application generated-by="intellij" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_1.xsd">
 
 	<classpath>
-		<dir name="E:/桌面/Du/Y2作业/project/LcccSSM/target/classes">
+		<dir name="F:/Y2/Mybatis/Mybatis/LcccSSM/LcccSSM/target/classes">
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<dir name="E:/桌面/Du/Y2作业/project/LcccSSM/src/main/webapp">
+			<dir name="F:/Y2/Mybatis/Mybatis/LcccSSM/LcccSSM/src/main/webapp">
 			</dir>
 		</link>
 	</web>

@@ -1,4 +1,4 @@
-package com.model;
+package com.ssm.model;
 
 import lombok.ToString;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.mapper.TuserMapper" >
-  <resultMap id="BaseResultMap" type="com.model.Tuser" >
+<mapper namespace="com.ssm.mapper.TuserMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.Tuser" >
     <constructor >
       <idArg column="userid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -27,23 +27,43 @@
     from t_user
     where userid = #{userid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <select id="selectNamePass" resultType="com.ssm.model.Tuser" parameterType="com.ssm.model.Tuser">
+  SELECT
+  <include refid="Base_Column_List"/>
+  FROM t_user
+  where username = #{username} AND loginpass = #{loginpass}
+</select>
+  <select id="selectName" resultType="com.ssm.model.Tuser" parameterType="com.ssm.model.Tuser">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM t_user
+    where username = #{username}
+
+  </select>
+    <select id="selectPhone" resultType="com.ssm.model.Tuser" parameterType="com.ssm.model.Tuser">
+      SELECT
+      <include refid="Base_Column_List"/>
+      FROM t_user
+      where phone = #{phone}
+
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_user
     where userid = #{userid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.model.Tuser" >
-    insert into t_user (username, loginpass,
-      salt,phone,
-      userimage, phonecheck,
-       registertime
+  <insert id="insert" parameterType="com.ssm.model.Tuser" >
+    insert into t_user (userid, username, loginpass, 
+      salt, email, phone, 
+      userimage, emailcheck, phonecheck, 
+      realnamecheck, islock, registertime
       )
-    values (#{username,jdbcType=VARCHAR}, #{loginpass,jdbcType=VARCHAR},
-      #{salt,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT},
-      #{userimage,jdbcType=VARCHAR},#{phonecheck,jdbcType=INTEGER},
-      #{registertime,jdbcType=TIMESTAMP}
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{loginpass,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, 
+      #{userimage,jdbcType=VARCHAR}, #{emailcheck,jdbcType=INTEGER}, #{phonecheck,jdbcType=INTEGER}, 
+      #{realnamecheck,jdbcType=INTEGER}, #{islock,jdbcType=INTEGER}, #{registertime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.model.Tuser" >
+  <insert id="insertSelective" parameterType="com.ssm.model.Tuser" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userid != null" >
@@ -122,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.model.Tuser" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.Tuser" >
     update t_user
     <set >
       <if test="username != null" >
@@ -161,7 +181,7 @@
     </set>
     where userid = #{userid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.model.Tuser" >
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.Tuser" >
     update t_user
     set username = #{username,jdbcType=VARCHAR},
       loginpass = #{loginpass,jdbcType=VARCHAR},
