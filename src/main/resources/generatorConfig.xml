@@ -63,6 +63,7 @@
         <!-- tableName为对应的数据库表 -->
         <!-- domainObjectName是要生成的实体类 -->
         <!-- enable*ByExample是否生成 example类 -->
+<<<<<<< HEAD
         <!--<table schema="" tableName="t_book" domainObjectName="Book"-->
         <!--enableCountByExample="false" enableDeleteByExample="false"-->
         <!--enableSelectByExample="false" enableUpdateByExample="false">-->
@@ -70,6 +71,47 @@
         <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
         <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
         <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+=======
+        <!--<table schema="" tableName="t_user_account" domainObjectName="UserAccount"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false">-->
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+        <!--</table>-->
+        <!--<table schema="" tableName="t_sys_role" domainObjectName="SysRole"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false">-->
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+        <!--</table>-->
+        <!--<table schema="" tableName="t_sys_role_permission" domainObjectName="SysRolePermission"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false">-->
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+        <!--</table>-->
+        <!--<table schema="" tableName="t_sys_user" domainObjectName="SysUser"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false">-->
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+        <!--</table>-->
+        <!--<table schema="" tableName="t_sys_user_role" domainObjectName="SysUserRole"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false">-->
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+>>>>>>> 033908c805c1b63a4153713a7c78a4c68eeeb92c
         <!--</table>-->
 
         <!--<table schema="" tableName="t_user" domainObjectName="Tuser"-->

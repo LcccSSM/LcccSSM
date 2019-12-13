@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.UserAccountMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.UserAccount" >
+    <constructor >
+      <idArg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="userid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="totalmoney" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="unReturnAmoney" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="unReturnAmount" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="borrowLimit" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="remainBorrowLimit" jdbcType="REAL" javaType="java.lang.Float" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    aid, userid, totalmoney, unReturnAmoney, unReturnAmount, borrowLimit, remainBorrowLimit
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_account
+    where aid = #{aid,jdbcType=INTEGER}
+  </select>
+  <select id="getByUid" resultType="com.ssm.model.UserAccount">
+    SELECT <include refid="Base_Column_List"/>
+    FROM t_user_account
+    WHERE userid = #{useid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_user_account
+    where aid = #{aid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.model.UserAccount" >
+    insert into t_user_account (aid, userid, totalmoney, 
+      unReturnAmoney, unReturnAmount, borrowLimit, 
+      remainBorrowLimit)
+    values (#{aid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{totalmoney,jdbcType=REAL}, 
+      #{unreturnamoney,jdbcType=REAL}, #{unreturnamount,jdbcType=REAL}, #{borrowlimit,jdbcType=REAL}, 
+      #{remainborrowlimit,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.model.UserAccount" >
+    insert into t_user_account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aid != null" >
+        aid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="totalmoney != null" >
+        totalmoney,
+      </if>
+      <if test="unreturnamoney != null" >
+        unReturnAmoney,
+      </if>
+      <if test="unreturnamount != null" >
+        unReturnAmount,
+      </if>
+      <if test="borrowlimit != null" >
+        borrowLimit,
+      </if>
+      <if test="remainborrowlimit != null" >
+        remainBorrowLimit,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aid != null" >
+        #{aid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="totalmoney != null" >
+        #{totalmoney,jdbcType=REAL},
+      </if>
+      <if test="unreturnamoney != null" >
+        #{unreturnamoney,jdbcType=REAL},
+      </if>
+      <if test="unreturnamount != null" >
+        #{unreturnamount,jdbcType=REAL},
+      </if>
+      <if test="borrowlimit != null" >
+        #{borrowlimit,jdbcType=REAL},
+      </if>
+      <if test="remainborrowlimit != null" >
+        #{remainborrowlimit,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.UserAccount" >
+    update t_user_account
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="totalmoney != null" >
+        totalmoney = #{totalmoney,jdbcType=REAL},
+      </if>
+      <if test="unreturnamoney != null" >
+        unReturnAmoney = #{unreturnamoney,jdbcType=REAL},
+      </if>
+      <if test="unreturnamount != null" >
+        unReturnAmount = #{unreturnamount,jdbcType=REAL},
+      </if>
+      <if test="borrowlimit != null" >
+        borrowLimit = #{borrowlimit,jdbcType=REAL},
+      </if>
+      <if test="remainborrowlimit != null" >
+        remainBorrowLimit = #{remainborrowlimit,jdbcType=REAL},
+      </if>
+    </set>
+    where aid = #{aid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.UserAccount" >
+    update t_user_account
+    set userid = #{userid,jdbcType=INTEGER},
+      totalmoney = #{totalmoney,jdbcType=REAL},
+      unReturnAmoney = #{unreturnamoney,jdbcType=REAL},
+      unReturnAmount = #{unreturnamount,jdbcType=REAL},
+      borrowLimit = #{borrowlimit,jdbcType=REAL},
+      remainBorrowLimit = #{remainborrowlimit,jdbcType=REAL}
+    where aid = #{aid,jdbcType=INTEGER}
+  </update>
+</mapper>

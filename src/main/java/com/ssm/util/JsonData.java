@@ -46,5 +46,8 @@ public class JsonData extends HashMap<String, Object> implements Serializable {
 	public void setTotal(Integer total) {
 		this.put(TOTAL_KEY, total);
 	}
+	public void setTotal(Long total) {
+		this.put(TOTAL_KEY, total);
+	}
 
 }

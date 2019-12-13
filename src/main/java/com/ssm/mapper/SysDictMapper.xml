@@ -32,12 +32,25 @@
   <select id="listByPage" resultType="com.ssm.model.SysDict" parameterType="com.ssm.model.SysDict">
     SELECT
     <include refid="Base_Column_List"/>
-    FROM t_sys_dict
-    <if test="null != dtype and '' !=dtype or null != dtitle and '' !=dtitle">
-      AND book_name LIKE #{bookName}
+    FROM t_sys_dict WHERE 1=1
+    <if test="'' != dtype and null!=dtype">
+        AND dtype LIKE CONCAT('%','${dtype}','%')
     </if>
+    <if test="'' != dtitle and null != dtitle">
+      AND dtitle LIKE CONCAT('%','${dtitle}','%')
+    </if>
+    <if test="'' != dcontent and null !=dcontent">
+      AND dcontent LIKE CONCAT('%','${dcontent}','%')
+    </if>
+
     ORDER BY dtype,dintro
 
+  </select>
+  <select id="ByTypeMAXID" resultType="int">
+    select MAX(dintro)+1 from t_sys_dict where dtype = #{dtype}
+  </select>
+  <select id="ByType" resultType="string">
+    SELECT dcontent FROM t_sys_dict WHERE dtype = #{dtype} AND dintro = #{dintro}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_sys_dict
