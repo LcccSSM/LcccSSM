@@ -10,7 +10,7 @@
     <context:annotation-config/>
     <!-- 组件扫描：用注解方式注入bean，并指定扫描的范围：com.zking.ssh2及子子孙孙包-->
     <!--<context:component-scan base-package="com.ssm"/>-->
-    <context:component-scan base-package="com.ssm" use-default-filters="true">
+    <context:component-scan base-package="com" use-default-filters="true">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
     </context:component-scan>
 
@@ -42,7 +42,7 @@
         <!-- 指定数据源 -->
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描XxxMapping.xml文件，**任意路径 -->
-        <property name="mapperLocations" value="classpath*:com/ssm/**/mapper/*.xml"/>
+        <property name="mapperLocations" value="classpath*:com/**/mapper/*.xml"/>
 
         <property name="configuration">
             <bean class="org.apache.ibatis.session.Configuration">

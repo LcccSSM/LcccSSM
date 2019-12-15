@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--1) 配置自定义Realm-->
-    <bean id="shiroRealm" class="com.ssm.shiro.ShiroRealm">
+    <bean id="shiroRealm" class="com.shiro.ShiroRealm">
         <!--注入UserService实现类，通过账号密码登录时实现基于Shiro身份认证识别-->
 
         <!--盐加密算法配置，详见7.2-->

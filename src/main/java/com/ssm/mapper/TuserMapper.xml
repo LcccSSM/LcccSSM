@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.TuserMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.Tuser" >
+    <constructor >
+      <idArg column="userid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="loginpass" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="salt" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="userimage" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="emailcheck" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="phonecheck" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="realnamecheck" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="islock" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="registertime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userid, username, loginpass, salt, email, phone, userimage, emailcheck, phonecheck, 
+    realnamecheck, islock, registertime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <select id="selectNamePass" resultType="com.ssm.model.Tuser" parameterType="com.ssm.model.Tuser">
+  SELECT
+  <include refid="Base_Column_List"/>
+  FROM t_user
+  where username = #{username} AND loginpass = #{loginpass}
+</select>
+  <select id="selectName" resultType="com.ssm.model.Tuser" parameterType="com.ssm.model.Tuser">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM t_user
+    where username = #{username}
+
+  </select>
+    <select id="selectPhone" resultType="com.ssm.model.Tuser" parameterType="com.ssm.model.Tuser">
+      SELECT
+      <include refid="Base_Column_List"/>
+      FROM t_user
+      where phone = #{phone}
+
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_user
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.model.Tuser" >
+    insert into t_user (userid, username, loginpass, 
+      salt, email, phone, 
+      userimage, emailcheck, phonecheck, 
+      realnamecheck, islock, registertime
+      )
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{loginpass,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, 
+      #{userimage,jdbcType=VARCHAR}, #{emailcheck,jdbcType=INTEGER}, #{phonecheck,jdbcType=INTEGER}, 
+      #{realnamecheck,jdbcType=INTEGER}, #{islock,jdbcType=INTEGER}, #{registertime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.model.Tuser" >
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="loginpass != null" >
+        loginpass,
+      </if>
+      <if test="salt != null" >
+        salt,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="userimage != null" >
+        userimage,
+      </if>
+      <if test="emailcheck != null" >
+        emailcheck,
+      </if>
+      <if test="phonecheck != null" >
+        phonecheck,
+      </if>
+      <if test="realnamecheck != null" >
+        realnamecheck,
+      </if>
+      <if test="islock != null" >
+        islock,
+      </if>
+      <if test="registertime != null" >
+        registertime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="loginpass != null" >
+        #{loginpass,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="userimage != null" >
+        #{userimage,jdbcType=VARCHAR},
+      </if>
+      <if test="emailcheck != null" >
+        #{emailcheck,jdbcType=INTEGER},
+      </if>
+      <if test="phonecheck != null" >
+        #{phonecheck,jdbcType=INTEGER},
+      </if>
+      <if test="realnamecheck != null" >
+        #{realnamecheck,jdbcType=INTEGER},
+      </if>
+      <if test="islock != null" >
+        #{islock,jdbcType=INTEGER},
+      </if>
+      <if test="registertime != null" >
+        #{registertime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.Tuser" >
+    update t_user
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="loginpass != null" >
+        loginpass = #{loginpass,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="userimage != null" >
+        userimage = #{userimage,jdbcType=VARCHAR},
+      </if>
+      <if test="emailcheck != null" >
+        emailcheck = #{emailcheck,jdbcType=INTEGER},
+      </if>
+      <if test="phonecheck != null" >
+        phonecheck = #{phonecheck,jdbcType=INTEGER},
+      </if>
+      <if test="realnamecheck != null" >
+        realnamecheck = #{realnamecheck,jdbcType=INTEGER},
+      </if>
+      <if test="islock != null" >
+        islock = #{islock,jdbcType=INTEGER},
+      </if>
+      <if test="registertime != null" >
+        registertime = #{registertime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.Tuser" >
+    update t_user
+    set username = #{username,jdbcType=VARCHAR},
+      loginpass = #{loginpass,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=BIGINT},
+      userimage = #{userimage,jdbcType=VARCHAR},
+      emailcheck = #{emailcheck,jdbcType=INTEGER},
+      phonecheck = #{phonecheck,jdbcType=INTEGER},
+      realnamecheck = #{realnamecheck,jdbcType=INTEGER},
+      islock = #{islock,jdbcType=INTEGER},
+      registertime = #{registertime,jdbcType=TIMESTAMP}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>
