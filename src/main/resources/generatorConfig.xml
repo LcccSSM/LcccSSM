@@ -6,7 +6,7 @@
     <properties resource="jdbc.properties"/>
 
     <!--指定数据库jdbc驱动jar包的位置-->
-    <classPathEntry location="E:\repository\mvn\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+    <classPathEntry location="D:\repository\mvn\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
 
     <!-- 一个数据库一个context -->
     <context id="infoGuardian">
@@ -63,16 +63,7 @@
         <!-- tableName为对应的数据库表 -->
         <!-- domainObjectName是要生成的实体类 -->
         <!-- enable*ByExample是否生成 example类 -->
-<<<<<<< HEAD
-        <!--<table schema="" tableName="t_book" domainObjectName="Book"-->
-        <!--enableCountByExample="false" enableDeleteByExample="false"-->
-        <!--enableSelectByExample="false" enableUpdateByExample="false">-->
-        <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
-        <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
-        <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
-        <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
-=======
-        <!--<table schema="" tableName="t_user_account" domainObjectName="UserAccount"-->
+        <!--<table schema="" tableName="t_function" domainObjectName="TFunction"-->
                <!--enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false">-->
             <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
@@ -111,10 +102,9 @@
             <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
             <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
             <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
->>>>>>> 033908c805c1b63a4153713a7c78a4c68eeeb92c
         <!--</table>-->
 
-        <!--<table schema="" tableName="t_user" domainObjectName="Tuser"-->
+        <!--<table schema="" tableName="t_customer" domainObjectName="Customer"-->
                <!--enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false">-->
             <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
@@ -122,13 +112,14 @@
             <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
             <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
         <!--</table>-->
-        <table tableName=""></table>
-
-
-
-
-
-
+        <!--<table schema="" tableName="t_order" domainObjectName="Order"-->
+               <!--enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false">-->
+            <!--&lt;!&ndash; 忽略列，不生成bean 字段 &ndash;&gt;-->
+            <!--&lt;!&ndash; <ignoreColumn column="FRED" /> &ndash;&gt;-->
+            <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
+            <!--&lt;!&ndash; <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> &ndash;&gt;-->
+        <!--</table>-->
 
     </context>
 </generatorConfiguration>
