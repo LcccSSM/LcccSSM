@@ -11,7 +11,10 @@ public interface IUserService {
 
     Tuser selectByPrimaryKey(Integer userid);
 
+    //用户绑定邮箱
     int updateByPrimaryKeySelective(Tuser record);
+    //根据邮箱查询
+    Tuser selectEmail(Tuser tuser);
 
     int updateByPrimaryKey(Tuser record);
 

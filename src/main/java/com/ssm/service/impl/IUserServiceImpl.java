@@ -32,9 +32,15 @@ public class IUserServiceImpl implements IUserService {
         return null;
     }
 
+    //用户绑定邮箱
     @Override
     public int updateByPrimaryKeySelective(Tuser record) {
-        return 0;
+        return tuserMapper.updateByPrimaryKeySelective(record );
+    }
+
+    @Override
+    public Tuser selectEmail(Tuser tuser) {
+        return tuserMapper.selectEmail(tuser);
     }
 
     @Override

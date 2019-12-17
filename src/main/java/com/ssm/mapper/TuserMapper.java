@@ -13,7 +13,10 @@ public interface TuserMapper {
 
     Tuser selectByPrimaryKey(Integer userid);
 
+    //用户绑定邮箱
     int updateByPrimaryKeySelective(Tuser record);
+    //根据邮箱查询
+    Tuser selectEmail(Tuser tuser);
 
     int updateByPrimaryKey(Tuser record);
 
@@ -25,6 +28,7 @@ public interface TuserMapper {
 
     //用户登录 手机号码登录
     Tuser selectPhone(Tuser tuser);
+
 
 
 

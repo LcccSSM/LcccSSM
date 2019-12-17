@@ -3,18 +3,15 @@ package com.ssm.controller;
 import com.ssm.dto.MyYZM;
 import com.ssm.model.Tuser;
 import com.ssm.service.IUserService;
+import com.ssm.util.Email;
 import com.ssm.util.JsonData;
 import com.ssm.util.PasswordHelper;
 import com.ssm.util.SendSms;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -27,10 +24,10 @@ public class TUserController {
     @Autowired
     private IUserService iUserService;
 
-    //短信验证接口
+    //手机短信验证接口
     @RequestMapping(value = "/YZM")
     @ResponseBody
-    public Map YZM(@ModelAttribute Tuser tuser) {
+    public Map YZM(Tuser tuser) {
         jsonData = new JsonData();
         Long phone = tuser.getPhone();
         String yzm = sendSms.SJ(phone);
@@ -42,7 +39,7 @@ public class TUserController {
     //用户注册接口
     @RequestMapping(value = "/addUser")
     @ResponseBody
-    public Map addUser(@ModelAttribute Tuser tuser, MyYZM myYZM) {
+    public Map addUser(Tuser tuser, MyYZM myYZM) {
         //MD5加密
         PasswordHelper passwordHelper = new PasswordHelper();
         //盐
@@ -67,16 +64,16 @@ public class TUserController {
     }
 
     //根据用户名查询信息对象接口
-    @RequestMapping(value = "selectName")
+    @RequestMapping(value = "/selectName")
     @ResponseBody
-    public Tuser selectName(@ModelAttribute Tuser tuser) {
+    public Tuser selectName(Tuser tuser) {
         Tuser user = iUserService.selectName(tuser);
         return user;
     }
     //根据用户名查询信息JSON接口
-    @RequestMapping(value = "selectNameJS")
+    @RequestMapping(value = "/selectNameJS")
     @ResponseBody
-    public JsonData selectNameJS(@ModelAttribute Tuser tuser) {
+    public JsonData selectNameJS(Tuser tuser) {
         jsonData = new JsonData();
         Tuser user = iUserService.selectName(tuser);
         if(user == null){
@@ -91,9 +88,9 @@ public class TUserController {
 
 
     //用户登录，账号密码登录接口
-    @RequestMapping(value = "selectNamePass")
+    @RequestMapping(value = "/selectNamePass")
     @ResponseBody
-    public JsonData selectNamePass(@ModelAttribute Tuser tuser) {
+    public JsonData selectNamePass(Tuser tuser) {
         jsonData = new JsonData();
         //MD5加密
         PasswordHelper passwordHelper = new PasswordHelper();
@@ -122,17 +119,18 @@ public class TUserController {
     }
 
     //用户登录，手机登录接口
-    @RequestMapping(value="selectPhone")
+    @RequestMapping(value="/selectPhone")
     @ResponseBody
-    public Tuser selectPhone(@ModelAttribute Tuser tuser){
+    public Tuser selectPhone(Tuser tuser){
         Tuser user = iUserService.selectPhone(tuser);
         return  user;
     };
     //用户注册验证手机是否已经存在接口
-    @RequestMapping(value="selectPhoneJS")
+    @RequestMapping(value="/selectPhoneJS")
     @ResponseBody
-    public JsonData selectPhoneJS(@ModelAttribute Tuser tuser){
+    public JsonData selectPhoneJS(Tuser tuser){
         jsonData = new JsonData();
+        System.out.println("电话："+tuser.getPhone());
         Tuser user = iUserService.selectPhone(tuser);
         if(user == null){
             jsonData.setCode(1);
@@ -142,6 +140,54 @@ public class TUserController {
             jsonData.setMessage("该手机号已注册！");
         }
         return  jsonData;
+    };
+
+    //用户绑定邮箱接口
+    @RequestMapping(value="/addUserEmail")
+    @ResponseBody
+    public JsonData addUserEmail(Tuser tuser){
+        jsonData = new JsonData();
+        //根据用户名查询用户
+        Tuser userinfo = iUserService.selectName(tuser);
+        //吧用户ID赋值
+        tuser.setUserid(userinfo.getUserid());
+        tuser.setEmailcheck(1);
+        //根据用户ID绑定邮箱
+        int i = iUserService.updateByPrimaryKeySelective(tuser);
+        if(i == 1){
+            jsonData.setCode(1);
+            jsonData.setMessage("邮箱绑定成功");
+        }else{
+            jsonData.setCode(0);
+            jsonData.setMessage("邮箱绑定失败");
+        }
+        return  jsonData;
+    };
+    //查询邮箱是否已注册接口
+    @RequestMapping(value="/selectEmail")
+    @ResponseBody
+    public JsonData selectEmail(Tuser tuser){
+        jsonData = new JsonData();
+        Tuser user = iUserService.selectEmail(tuser);
+        if(user == null){
+            jsonData.setCode(1);
+            jsonData.setMessage("邮箱未注册！");
+        }else{
+            jsonData.setCode(0);
+            jsonData.setMessage("邮箱已注册！");
+        }
+        return  jsonData;
+    };
+    //邮箱验证码
+    @RequestMapping(value="/EmailYZM")
+    @ResponseBody
+    public JsonData EmailYZM(Tuser tuser){
+        jsonData = new JsonData();
+        Email email = new Email();
+        String emailYZM = email.sendMail(tuser.getEmail());
+        jsonData.setCode(1);
+        jsonData.setMessage(emailYZM);
+        return jsonData;
     };
 
 
