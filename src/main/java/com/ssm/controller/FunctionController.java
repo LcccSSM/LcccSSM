@@ -24,7 +24,7 @@ public class FunctionController {
     @Autowired
     private IFunctionService functionService;
 
-    @RequestMapping("/listByFunction")
+    @RequestMapping(value="/listByFunction")
     @ResponseBody
     public  Map<String,Object> listByFunction(){
         List<TFunction> functions = functionService.listByFunction(10);

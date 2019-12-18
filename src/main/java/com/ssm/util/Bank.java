@@ -1,6 +1,5 @@
 package com.ssm.util;
 
-import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 
 import java.util.HashMap;
@@ -11,7 +10,7 @@ public class Bank {
         String host = "https://b4bankcard.market.alicloudapi.com";
         String path = "/bankCheck4New";
         String method = "GET";
-        String appcode = "dc478afb65494543818552bd2a55d2d5";
+        String appcode = "54c60f24d73c45dd8c7555635d507084";
         Map<String, String> headers = new HashMap<String, String>();
         //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
         headers.put("Authorization", "APPCODE " + appcode);
@@ -36,8 +35,8 @@ public class Bank {
              * 相关jar包（非pom）直接下载：
              * http://code.fegine.com/aliyun-jar.zip
              */
-            HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
-            //System.out.println(response.toString());如不输出json, 请打开这行代码，打印调试头部状态码。
+            org.apache.http.HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
+            System.out.println("lk::"+response.toString());//如不输出json, 请打开这行代码，打印调试头部状态码。
             //状态码: 200 正常；400 URL无效；401 appCode错误； 403 次数用完； 500 API网管错误
             //获取response的body
             System.out.println(EntityUtils.toString(response.getEntity()));
@@ -47,7 +46,7 @@ public class Bank {
         }
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //       Bank.getBank("6230521120005817872","430523200002184375","18692970612","李康");
-    }
+//    }
 }

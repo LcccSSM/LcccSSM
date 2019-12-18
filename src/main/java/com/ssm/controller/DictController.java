@@ -22,7 +22,7 @@ public class DictController {
     private ISysDictService sysDictService;
 
 
-    @RequestMapping("/Dict_bydtype")
+    @RequestMapping(value="/Dict_bydtype")
     @ResponseBody
     public List<SysDict> byDtype(String dtype){
         List<SysDict> dictList = sysDictService.ByDtypeList(dtype);
@@ -30,7 +30,7 @@ public class DictController {
         return dictList;
     }
 
-    @RequestMapping("/Dict_listAll")
+    @RequestMapping(value="/Dict_listAll")
     @ResponseBody
     public Map listAll(){
         JsonData jsonData = new JsonData();
@@ -41,7 +41,7 @@ public class DictController {
         return jsonData;
     }
 
-    @RequestMapping("/Dict_byPageBean")
+    @RequestMapping(value="/Dict_byPageBean")
     @ResponseBody
     public Map byPageBean(HttpServletRequest request,SysDict sysDict){
         JsonData jsonData = new JsonData();
@@ -62,7 +62,7 @@ public class DictController {
     }
 
 
-    @RequestMapping("/Dict_ByTypeMAXID")
+    @RequestMapping(value="/Dict_ByTypeMAXID")
     @ResponseBody
     public Map ByTypeMAXID(String dtype){
         JsonData jsonData = new JsonData();
@@ -72,7 +72,7 @@ public class DictController {
         return jsonData;
     }
 
-    @RequestMapping("/Dict_Add")
+    @RequestMapping(value="/Dict_Add")
     @ResponseBody
     public int addDict(SysDict sysDict){
         int maxid = sysDictService.ByTypeMAXID(sysDict.getDtype());
@@ -82,7 +82,7 @@ public class DictController {
         return i;
     }
 
-    @RequestMapping("/Dict_ByDtype")
+    @RequestMapping(value="/Dict_ByDtype")
     @ResponseBody
     public String ByDtype(String dtype,int dintro){
 
@@ -92,7 +92,7 @@ public class DictController {
 
     }
 
-    @RequestMapping("/Dict_Merge")
+    @RequestMapping(value="/Dict_Merge")
     @ResponseBody
     public int merge(SysDict sysDict){
         if (null!=sysDict.getDid()){
@@ -110,14 +110,14 @@ public class DictController {
     }
 
 
-    @RequestMapping("/Dict_Del")
+    @RequestMapping(value="/Dict_Del")
     @ResponseBody
     public int delDict(Integer did){
         int i = sysDictService.deleteByPrimaryKey(new Long(did));
 
         return i;
     }
-    @RequestMapping("/Dict_Update")
+    @RequestMapping(value="/Dict_Update")
     @ResponseBody
     public int updateDict(SysDict sysDict){
         int i = sysDictService.updateByPrimaryKeySelective(sysDict);

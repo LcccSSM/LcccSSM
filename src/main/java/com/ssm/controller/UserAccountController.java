@@ -4,6 +4,7 @@ import com.ssm.model.UserAccount;
 import com.ssm.service.IUserAccountService;
 import com.ssm.util.Bank;
 import com.ssm.util.ImgFile;
+import com.ssm.util.JsonData;
 import com.ssm.util.SFZ;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ public class UserAccountController {
     @Autowired
     private IUserAccountService userAccountService;
 
-    @RequestMapping("/UAccount_byAdd")
+    @RequestMapping(value="/UAccount_byAdd")
     public int byAdd(UserAccount userAccount){
 
         int i = userAccountService.insertSelective(userAccount);
@@ -29,7 +30,7 @@ public class UserAccountController {
     }
 
 
-    @RequestMapping("/UAccount_byUpdate")
+    @RequestMapping(value="/UAccount_byUpdate")
     public int byUpdate(UserAccount userAccount){
 
         int i = userAccountService.updateByPrimaryKeySelective(userAccount);
@@ -37,7 +38,7 @@ public class UserAccountController {
         return i;
     }
 
-    @RequestMapping("/UAccount_getByUserid")
+    @RequestMapping(value="/UAccount_getByUserid")
     @ResponseBody
     public UserAccount getByUserid(int userid){
 
@@ -46,34 +47,32 @@ public class UserAccountController {
         return userAccount;
     }
 
-    @RequestMapping("/getBank")
+    @RequestMapping(value="/getBank",produces="text/html;charset=UTF-8")
     @ResponseBody
-    public String getBank(String bankId,String idCard ,String mobile,String name){
-
+    public String getBank(String bankId, String idCard , String mobile, String name){
         String bank= Bank.getBank(bankId,idCard,mobile,name);
-
         return bank;
     }
 
-//    @RequestMapping("/getSFZ")
-//    @ResponseBody
-//    public String getSFZ(String idCard ,String name){
-//
-//        Map<String, String> params = new HashMap<>();
-//        params.put("idcard", idCard);
-//        params.put("name", name);
-//        String result = null;
-//        try {
-//            result = SFZ.postForm( params);
-//        } catch (IOException e) {
-//           throw new RuntimeException(e);
-//        }
-//        System.out.println(result);
-//
-//        return result;
-//    }
+    @RequestMapping("/getSFZ")
+    @ResponseBody
+    public String getSFZ(String idCard ,String name){
 
-    @RequestMapping("/getFileImg")
+        Map<String, String> params = new HashMap<>();
+        params.put("idcard", idCard);
+        params.put("name", name);
+        String result = null;
+        try {
+            result = SFZ.postForm( params);
+        } catch (IOException e) {
+           throw new RuntimeException(e);
+        }
+        System.out.println(result);
+
+        return result;
+    }
+
+    @RequestMapping(value="/getFileImg",produces="text/html;charset=UTF-8")
     @ResponseBody
     public String getFileImg(String filePath){
 

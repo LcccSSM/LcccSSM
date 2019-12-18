@@ -382,16 +382,21 @@
             <version>1.0.2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/mail/mail -->
-        <dependency>
-            <groupId>mail</groupId>
-            <artifactId>mail</artifactId>
+        <!--<dependency>-->
+            <!--<groupId>mail</groupId>-->
+            <!--<artifactId>mail</artifactId>-->
             <!--<version>1.4</version>-->
-        </dependency>
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>3.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.0.2.RELEASE</version>
         </dependency>
 
 

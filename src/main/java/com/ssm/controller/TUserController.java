@@ -10,8 +10,16 @@ import com.ssm.util.SendSms;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -69,7 +77,6 @@ public class TUserController {
         Tuser user = iUserService.selectName(tuser);
         String a = user.getEmail().substring(4, 8);
         user.setEmail(user.getEmail().replace(user.getEmail().substring(4, 8),"****"));
-        System.out.println("aaaaa:"+a);
         return user;
     }
     //根据用户名查询信息JSON接口
@@ -226,6 +233,30 @@ public class TUserController {
         JsonData jsonData = UpdataUser(tuser);
         return jsonData;
     };
+
+    //用户添加头像
+    @RequestMapping(value="/UpdataImage")
+    @ResponseBody
+    public JsonData imageupload(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "file", required = false) MultipartFile file, @RequestParam(value = "asuserid", required = false) Long asuserid) throws IOException {
+        System.out.println(file.getOriginalFilename());
+        String fileRealName = file.getOriginalFilename(); //获得原始文件名;
+        int pointIndex = fileRealName.indexOf(".");  //点号的位置
+        String fileSuffix = fileRealName.substring(pointIndex);  //截取文件后缀
+        String pic_time = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        String saveFile = pic_time + fileSuffix;
+        String filePath = "/uploads" + File.separator + saveFile;
+        String realPath = request.getServletContext().getRealPath(filePath);
+        jsonData = new JsonData();
+        if (!file.isEmpty()) {
+            jsonData.setCode(1);
+            jsonData.setMessage("上传成功");
+            file.transferTo(new File(realPath));
+        } else {
+            jsonData.setCode(0);
+            jsonData.setMessage("上传失败");
+        }
+        return  jsonData;
+    }
 
 
 }
