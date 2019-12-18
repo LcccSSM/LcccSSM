@@ -46,7 +46,6 @@ public class TUserController {
         String salt = passwordHelper.createSalt();
         //凭证+盐加密后得到的密码
         String credentials = passwordHelper.createCredentials(tuser.getLoginpass(), salt);
-        System.out.println("密文" + credentials);
         //验证密码是否正确
 //        boolean b = passwordHelper.checkCredentials("0612", salt, credentials);
         jsonData = new JsonData();
@@ -68,6 +67,9 @@ public class TUserController {
     @ResponseBody
     public Tuser selectName(Tuser tuser) {
         Tuser user = iUserService.selectName(tuser);
+        String a = user.getEmail().substring(4, 8);
+        user.setEmail(user.getEmail().replace(user.getEmail().substring(4, 8),"****"));
+        System.out.println("aaaaa:"+a);
         return user;
     }
     //根据用户名查询信息JSON接口
@@ -106,7 +108,6 @@ public class TUserController {
         tuser.setLoginpass(credentials);
         //查询用户
         Tuser userAll = iUserService.selectNamePass(tuser);
-        System.out.println("aaa:"+userAll);
         if (null != userAll) {
             //json格式转出
             jsonData.setCode(1);
@@ -130,7 +131,6 @@ public class TUserController {
     @ResponseBody
     public JsonData selectPhoneJS(Tuser tuser){
         jsonData = new JsonData();
-        System.out.println("电话："+tuser.getPhone());
         Tuser user = iUserService.selectPhone(tuser);
         if(user == null){
             jsonData.setCode(1);
@@ -187,6 +187,43 @@ public class TUserController {
         String emailYZM = email.sendMail(tuser.getEmail());
         jsonData.setCode(1);
         jsonData.setMessage(emailYZM);
+        return jsonData;
+    };
+    //用户修改手机号码接口
+    @RequestMapping(value="/UpdataUser")
+    @ResponseBody
+    public JsonData UpdataUser(Tuser tuser){
+        jsonData = new JsonData();
+        //根据用户名查询用户
+        Tuser userinfo = iUserService.selectName(tuser);
+        //吧用户ID赋值
+        tuser.setUserid(userinfo.getUserid());
+        //修改
+        int i = iUserService.updateByPrimaryKeySelective(tuser);
+        if(i == 1){
+            jsonData.setCode(1);
+            jsonData.setMessage("修改成功");
+        }else{
+            jsonData.setCode(0);
+            jsonData.setMessage("修改失败");
+        }
+        return  jsonData;
+    };
+    //用户修改密码接口
+    @RequestMapping(value="/UpdataUserPass")
+    @ResponseBody
+    public JsonData UpdataUserPass(Tuser tuser){
+        //MD5加密
+        PasswordHelper passwordHelper = new PasswordHelper();
+        //盐
+        String salt = passwordHelper.createSalt();
+        //凭证+盐加密后得到的密码
+        String credentials = passwordHelper.createCredentials(tuser.getLoginpass(), salt);
+        //密文赋值
+        tuser.setLoginpass(credentials);
+        //盐赋值
+        tuser.setSalt(salt);
+        JsonData jsonData = UpdataUser(tuser);
         return jsonData;
     };
 
