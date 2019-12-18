@@ -70,6 +70,6 @@ public class ImgFile {
     }
 
     public static void main(String[] args) {
-//        System.out.println(getFile("D:\\repository\\git\\lcccSSM\\LcccSSM\\src\\main\\java\\com\\ssm\\image\\IMG_0570.JPG"));
+        System.out.println(getFile("D:\\repository\\git\\lcccSSM\\LcccSSM\\src\\main\\java\\com\\ssm\\image\\IMG_0570.JPG"));
     }
 }
