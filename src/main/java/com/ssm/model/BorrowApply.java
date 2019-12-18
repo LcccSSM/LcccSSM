@@ -1,5 +1,8 @@
 package com.ssm.model;
 
+import lombok.ToString;
+
+@ToString
 public class BorrowApply {
     private Integer jid;
 

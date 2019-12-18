@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.StateStatusMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.StateStatus" >
+    <constructor >
+      <idArg column="asid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="auserid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="arealname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="asidsex" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="asidcardno" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="asidaddress" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="asidimg" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="asidimg2" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    asid, auserid, arealname, asidsex, asidcardno, asidaddress, asidimg, asidimg2
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_state_status
+    where asid = #{asid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_state_status
+    where asid = #{asid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.model.StateStatus" >
+    insert into t_state_status (asid, auserid, arealname, 
+      asidsex, asidcardno, asidaddress, 
+      asidimg, asidimg2)
+    values (#{asid,jdbcType=INTEGER}, #{auserid,jdbcType=INTEGER}, #{arealname,jdbcType=VARCHAR}, 
+      #{asidsex,jdbcType=CHAR}, #{asidcardno,jdbcType=VARCHAR}, #{asidaddress,jdbcType=VARCHAR}, 
+      #{asidimg,jdbcType=VARCHAR}, #{asidimg2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.model.StateStatus" >
+    insert into t_state_status
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="auserid != null" >
+        auserid,
+      </if>
+      <if test="arealname != null" >
+        arealname,
+      </if>
+      <if test="asidsex != null" >
+        asidsex,
+      </if>
+      <if test="asidcardno != null" >
+        asidcardno,
+      </if>
+      <if test="asidaddress != null" >
+        asidaddress,
+      </if>
+      <if test="asidimg != null" >
+        asidimg,
+      </if>
+      <if test="asidimg2 != null" >
+        asidimg2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="auserid != null" >
+        #{auserid,jdbcType=INTEGER},
+      </if>
+      <if test="arealname != null" >
+        #{arealname,jdbcType=VARCHAR},
+      </if>
+      <if test="asidsex != null" >
+        #{asidsex,jdbcType=CHAR},
+      </if>
+      <if test="asidcardno != null" >
+        #{asidcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="asidaddress != null" >
+        #{asidaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="asidimg != null" >
+        #{asidimg,jdbcType=VARCHAR},
+      </if>
+      <if test="asidimg2 != null" >
+        #{asidimg2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.StateStatus" >
+    update t_state_status
+    <set >
+      <if test="auserid != null" >
+        auserid = #{auserid,jdbcType=INTEGER},
+      </if>
+      <if test="arealname != null" >
+        arealname = #{arealname,jdbcType=VARCHAR},
+      </if>
+      <if test="asidsex != null" >
+        asidsex = #{asidsex,jdbcType=CHAR},
+      </if>
+      <if test="asidcardno != null" >
+        asidcardno = #{asidcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="asidaddress != null" >
+        asidaddress = #{asidaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="asidimg != null" >
+        asidimg = #{asidimg,jdbcType=VARCHAR},
+      </if>
+      <if test="asidimg2 != null" >
+        asidimg2 = #{asidimg2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where asid = #{asid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.StateStatus" >
+    update t_state_status
+    set auserid = #{auserid,jdbcType=INTEGER},
+      arealname = #{arealname,jdbcType=VARCHAR},
+      asidsex = #{asidsex,jdbcType=CHAR},
+      asidcardno = #{asidcardno,jdbcType=VARCHAR},
+      asidaddress = #{asidaddress,jdbcType=VARCHAR},
+      asidimg = #{asidimg,jdbcType=VARCHAR},
+      asidimg2 = #{asidimg2,jdbcType=VARCHAR}
+    where asid = #{asid,jdbcType=INTEGER}
+  </update>
+</mapper>
