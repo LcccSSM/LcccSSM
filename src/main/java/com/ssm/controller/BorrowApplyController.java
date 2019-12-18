@@ -22,7 +22,7 @@ public class BorrowApplyController {
     private IBorrowApplyService borrowApplyService;
 
 
-    @RequestMapping("/Loan_ByPageAll")
+    @RequestMapping(value="/Loan_ByPageAll")
     @ResponseBody
     public Map ByPageAll(HttpServletRequest request, BorrowApply borrowApply){
         JsonData jsonData = new JsonData();
@@ -47,7 +47,7 @@ public class BorrowApplyController {
     }
 
 
-    @RequestMapping("/loan_ByAdd")
+    @RequestMapping(value="/loan_ByAdd")
     @ResponseBody
     public int loanAdd(BorrowApply borrowApply){
 
@@ -59,7 +59,7 @@ public class BorrowApplyController {
     }
 
 
-    @RequestMapping("/loan_ByDel")
+    @RequestMapping(value="/loan_ByDel")
     @ResponseBody
     public int loanDel(int jid){
 
@@ -70,7 +70,7 @@ public class BorrowApplyController {
     }
 
 
-    @RequestMapping("/loan_ByUpdate")
+    @RequestMapping(value="/loan_ByUpdate")
     @ResponseBody
     public int ByUpdate(BorrowApply borrowApply){
 
