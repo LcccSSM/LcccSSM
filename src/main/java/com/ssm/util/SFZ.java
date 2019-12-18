@@ -31,10 +31,10 @@ public class SFZ {
     }
 
     public static void main(String[] args) throws IOException {
-        Map<String, String> params = new HashMap<>();
-        params.put("idcard", "430523200002184375");
-        params.put("name", "李康");
-        String result = postForm( params);
-        System.out.println(result);
+//        Map<String, String> params = new HashMap<>();
+//        params.put("idcard", "430523200002184375");
+//        params.put("name", "陈世强");
+//        String result = postForm( params);
+//        System.out.println(result);
     }
 }
