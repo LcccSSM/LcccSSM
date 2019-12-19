@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class IBankServiceImpl implements IBankService {
     @Autowired
@@ -41,5 +43,10 @@ public class IBankServiceImpl implements IBankService {
     @Override
     public int updateByPrimaryKey(TBank record) {
         return 0;
+    }
+
+    @Override
+    public List<TBank> selectBank(Integer auserid) {
+        return tBankMapper.selectBank(auserid);
     }
 }

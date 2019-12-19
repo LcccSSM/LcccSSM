@@ -75,8 +75,12 @@ public class TUserController {
     @ResponseBody
     public Tuser selectName(Tuser tuser) {
         Tuser user = iUserService.selectName(tuser);
-        String a = user.getEmail().substring(4, 8);
-        user.setEmail(user.getEmail().replace(user.getEmail().substring(4, 8),"****"));
+        System.out.println("aaaaa:"+user);
+        System.out.println("111"+user.getEmail());
+//        System.out.println(!(user.getEmail().equals("null")));
+        if(user.getEmail() != null){
+            user.setEmail(user.getEmail().replace(user.getEmail().substring(4, 8),"****"));
+        }
         return user;
     }
     //根据用户名查询信息JSON接口

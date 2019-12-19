@@ -47,7 +47,7 @@ public class Bank {
         }
     }
 
-//    public static void main(String[] args) {
-//       Bank.getBank("6230521120005817872","430523200002184375","18692970612","李康");
-//    }
+    public static void main(String[] args) {
+       Bank.getBank("6230521120005817872","430523200002184375","18692970612","李康");
+    }
 }

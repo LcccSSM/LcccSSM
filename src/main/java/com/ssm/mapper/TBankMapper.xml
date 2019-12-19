@@ -11,10 +11,11 @@
       <arg column="addtime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="bpassword" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="salt" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="bankname" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    abid, auserid, abank, banktype, abankphone, addtime, bpassword, salt
+    abid, auserid, abank, banktype, abankphone, addtime, bpassword, salt,bankname
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -22,7 +23,13 @@
     from t_account_bank
     where abid = #{abid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectBank" resultType="com.ssm.model.TBank">
+      select
+      <include refid="Base_Column_List" />
+      from t_account_bank
+      where auserid = #{auserid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_account_bank
     where abid = #{abid,jdbcType=INTEGER}
   </delete>
@@ -61,6 +68,9 @@
       <if test="salt != null" >
         salt,
       </if>
+      <if test="bankname != null" >
+        bankname,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="abid != null" >
@@ -86,6 +96,9 @@
       </if>
       <if test="salt != null" >
         #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="bankname != null" >
+        #{bankname,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>

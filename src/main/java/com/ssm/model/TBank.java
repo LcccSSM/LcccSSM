@@ -21,7 +21,9 @@ public class TBank {
 
     private String salt;
 
-    public TBank(Integer abid, Integer auserid, String abank, String banktype, String abankphone, Date addtime, String bpassword, String salt) {
+    private String bankname;
+
+    public TBank(Integer abid, Integer auserid, String abank, String banktype, String abankphone, Date addtime, String bpassword, String salt,String bankname) {
         this.abid = abid;
         this.auserid = auserid;
         this.abank = abank;
@@ -30,6 +32,7 @@ public class TBank {
         this.addtime = addtime;
         this.bpassword = bpassword;
         this.salt = salt;
+        this.bankname = bankname;
     }
 
     public TBank() {
@@ -98,5 +101,13 @@ public class TBank {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    public String getBankname() {
+        return bankname;
+    }
+
+    public void setBankname(String bankname) {
+        this.bankname = bankname;
     }
 }

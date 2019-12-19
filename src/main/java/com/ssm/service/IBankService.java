@@ -2,6 +2,8 @@ package com.ssm.service;
 
 import com.ssm.model.TBank;
 
+import java.util.List;
+
 public interface IBankService {
     int deleteByPrimaryKey(Integer abid);
 
@@ -14,4 +16,6 @@ public interface IBankService {
     int updateByPrimaryKeySelective(TBank record);
 
     int updateByPrimaryKey(TBank record);
+
+    List<TBank> selectBank(Integer auserid);
 }
