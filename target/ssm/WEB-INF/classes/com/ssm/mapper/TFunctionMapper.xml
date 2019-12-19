@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.TFunctionMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.TFunction" >
+    <constructor >
+      <idArg column="function_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="function_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="path" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="method" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    function_id, function_name, path, method
+  </sql>
+
+    <select id="listByFunction" resultType="com.ssm.model.TFunction">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_function WHERE function_id &lt; #{FunctionMax}
+    </select>
+    <select id="manage" resultType="com.ssm.model.TFunction">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM  t_function where method LIKE CONCAT('%','${method}','%')
+    </select>
+
+</mapper>

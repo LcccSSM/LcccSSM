@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.BorrowApplyMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.BorrowApply" >
+    <constructor >
+      <idArg column="jid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="userid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="realname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="asidcardno" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="money" jdbcType="REAL" javaType="java.lang.Float" />
+      <arg column="timelimit" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="addtime" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="verifyuser" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="verifytime" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    jid, userid, realname, asidcardno, phone, money, timelimit, addtime, status, verifyuser, 
+    verifytime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_borrow_apply
+    where jid = #{jid,jdbcType=INTEGER}
+  </select>
+    <select id="ByPageAll" resultType="com.ssm.model.BorrowApply" parameterType="com.ssm.model.BorrowApply">
+      SELECT <include refid="Base_Column_List"/>
+      FROM t_borrow_apply
+      WHERE 1=1
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_borrow_apply
+    where jid = #{jid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.model.BorrowApply" >
+    insert into t_borrow_apply (jid, userid, realname, 
+      asidcardno, phone, money, 
+      timelimit, addtime, status, 
+      verifyuser, verifytime)
+    values (#{jid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{realname,jdbcType=VARCHAR}, 
+      #{asidcardno,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, #{money,jdbcType=REAL}, 
+      #{timelimit,jdbcType=INTEGER}, #{addtime,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{verifyuser,jdbcType=INTEGER}, #{verifytime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.model.BorrowApply" >
+    insert into t_borrow_apply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jid != null" >
+        jid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="asidcardno != null" >
+        asidcardno,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="timelimit != null" >
+        timelimit,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="verifyuser != null" >
+        verifyuser,
+      </if>
+      <if test="verifytime != null" >
+        verifytime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jid != null" >
+        #{jid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="asidcardno != null" >
+        #{asidcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="timelimit != null" >
+        #{timelimit,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="verifyuser != null" >
+        #{verifyuser,jdbcType=INTEGER},
+      </if>
+      <if test="verifytime != null" >
+        #{verifytime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.BorrowApply" >
+    update t_borrow_apply
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="asidcardno != null" >
+        asidcardno = #{asidcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="timelimit != null" >
+        timelimit = #{timelimit,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="verifyuser != null" >
+        verifyuser = #{verifyuser,jdbcType=INTEGER},
+      </if>
+      <if test="verifytime != null" >
+        verifytime = #{verifytime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jid = #{jid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.BorrowApply" >
+    update t_borrow_apply
+    set userid = #{userid,jdbcType=INTEGER},
+      realname = #{realname,jdbcType=VARCHAR},
+      asidcardno = #{asidcardno,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=BIGINT},
+      money = #{money,jdbcType=REAL},
+      timelimit = #{timelimit,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      verifyuser = #{verifyuser,jdbcType=INTEGER},
+      verifytime = #{verifytime,jdbcType=VARCHAR}
+    where jid = #{jid,jdbcType=INTEGER}
+  </update>
+</mapper>

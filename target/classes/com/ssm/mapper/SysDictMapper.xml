@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.SysDictMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.SysDict" >
+    <constructor >
+      <idArg column="did" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="dtitle" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="dtype" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="dcontent" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="dintro" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="dstate" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    did, dtitle, dtype, dcontent, dintro, dstate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_sys_dict
+    where did = #{did,jdbcType=BIGINT}
+  </select>
+  <select id="ByDtypeList" resultType="com.ssm.model.SysDict">
+    SELECT <include refid="Base_Column_List"/>
+    FROM t_sys_dict
+    WHERE dtype LIKE #{dtype}
+  </select>
+  <select id="listAll" resultType="com.ssm.model.SysDict">
+    SELECT <include refid="Base_Column_List"/>
+    FROM t_sys_dict ORDER BY dtype,dintro
+  </select>
+  <select id="listByPage" resultType="com.ssm.model.SysDict" parameterType="com.ssm.model.SysDict">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM t_sys_dict WHERE 1=1
+    <if test="'' != dtype and null!=dtype">
+        AND dtype LIKE CONCAT('%','${dtype}','%')
+    </if>
+    <if test="'' != dtitle and null != dtitle">
+      AND dtitle LIKE CONCAT('%','${dtitle}','%')
+    </if>
+    <if test="'' != dcontent and null !=dcontent">
+      AND dcontent LIKE CONCAT('%','${dcontent}','%')
+    </if>
+
+    ORDER BY dtype,dintro
+
+  </select>
+  <select id="ByTypeMAXID" resultType="int">
+    select MAX(dintro)+1 from t_sys_dict where dtype = #{dtype}
+  </select>
+  <select id="ByType" resultType="string">
+    SELECT dcontent FROM t_sys_dict WHERE dtype = #{dtype} AND dintro = #{dintro}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_sys_dict
+    where did = #{did,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.model.SysDict" >
+    insert into t_sys_dict (did, dtitle, dtype, 
+      dcontent, dintro, dstate
+      )
+    values (#{did,jdbcType=BIGINT}, #{dtitle,jdbcType=VARCHAR}, #{dtype,jdbcType=VARCHAR}, 
+      #{dcontent,jdbcType=VARCHAR}, #{dintro,jdbcType=INTEGER}, #{dstate,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.model.SysDict" >
+    insert into t_sys_dict
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="did != null" >
+        did,
+      </if>
+      <if test="dtitle != null" >
+        dtitle,
+      </if>
+      <if test="dtype != null" >
+        dtype,
+      </if>
+      <if test="dcontent != null" >
+        dcontent,
+      </if>
+      <if test="dintro != null" >
+        dintro,
+      </if>
+      <if test="dstate != null" >
+        dstate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="did != null" >
+        #{did,jdbcType=BIGINT},
+      </if>
+      <if test="dtitle != null" >
+        #{dtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="dtype != null" >
+        #{dtype,jdbcType=VARCHAR},
+      </if>
+      <if test="dcontent != null" >
+        #{dcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="dintro != null" >
+        #{dintro,jdbcType=INTEGER},
+      </if>
+      <if test="dstate != null" >
+        #{dstate,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.SysDict" >
+    update t_sys_dict
+    <set >
+      <if test="dtitle != null" >
+        dtitle = #{dtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="dtype != null" >
+        dtype = #{dtype,jdbcType=VARCHAR},
+      </if>
+      <if test="dcontent != null" >
+        dcontent = #{dcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="dintro != null" >
+        dintro = #{dintro,jdbcType=INTEGER},
+      </if>
+      <if test="dstate != null" >
+        dstate = #{dstate,jdbcType=INTEGER},
+      </if>
+    </set>
+    where did = #{did,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.SysDict" >
+    update t_sys_dict
+    set dtitle = #{dtitle,jdbcType=VARCHAR},
+      dtype = #{dtype,jdbcType=VARCHAR},
+      dcontent = #{dcontent,jdbcType=VARCHAR},
+      dintro = #{dintro,jdbcType=INTEGER},
+      dstate = #{dstate,jdbcType=INTEGER}
+    where did = #{did,jdbcType=BIGINT}
+  </update>
+</mapper>

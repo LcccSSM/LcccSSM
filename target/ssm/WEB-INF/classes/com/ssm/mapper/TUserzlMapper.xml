@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.TUserzlMapper" >
+  <resultMap id="BaseResultMap" type="com.ssm.model.TUserzl" >
+    <constructor >
+      <idArg column="zuid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="userid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="zstudent" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zmoney" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zmarriage" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zchild" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="zhome" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    zuid, userid, zstudent, zmoney, zmarriage, zchild, zhome
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_userzl
+    where zuid = #{zuid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUserid" resultType="com.ssm.model.TUserzl" parameterType="com.ssm.model.TUserzl">
+    select
+    <include refid="Base_Column_List" />
+    from t_userzl
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_userzl
+    where zuid = #{zuid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ssm.model.TUserzl" >
+    insert into t_userzl (zuid, userid, zstudent, 
+      zmoney, zmarriage, zchild, 
+      zhome)
+    values (#{zuid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{zstudent,jdbcType=VARCHAR}, 
+      #{zmoney,jdbcType=VARCHAR}, #{zmarriage,jdbcType=VARCHAR}, #{zchild,jdbcType=VARCHAR}, 
+      #{zhome,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ssm.model.TUserzl" >
+    insert into t_userzl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="zuid != null" >
+        zuid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="zstudent != null" >
+        zstudent,
+      </if>
+      <if test="zmoney != null" >
+        zmoney,
+      </if>
+      <if test="zmarriage != null" >
+        zmarriage,
+      </if>
+      <if test="zchild != null" >
+        zchild,
+      </if>
+      <if test="zhome != null" >
+        zhome,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="zuid != null" >
+        #{zuid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="zstudent != null" >
+        #{zstudent,jdbcType=VARCHAR},
+      </if>
+      <if test="zmoney != null" >
+        #{zmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="zmarriage != null" >
+        #{zmarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="zchild != null" >
+        #{zchild,jdbcType=VARCHAR},
+      </if>
+      <if test="zhome != null" >
+        #{zhome,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.model.TUserzl" >
+    update t_userzl
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="zstudent != null" >
+        zstudent = #{zstudent,jdbcType=VARCHAR},
+      </if>
+      <if test="zmoney != null" >
+        zmoney = #{zmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="zmarriage != null" >
+        zmarriage = #{zmarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="zchild != null" >
+        zchild = #{zchild,jdbcType=VARCHAR},
+      </if>
+      <if test="zhome != null" >
+        zhome = #{zhome,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where zuid = #{zuid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ssm.model.TUserzl" >
+    update t_userzl
+    set userid = #{userid,jdbcType=INTEGER},
+      zstudent = #{zstudent,jdbcType=VARCHAR},
+      zmoney = #{zmoney,jdbcType=VARCHAR},
+      zmarriage = #{zmarriage,jdbcType=VARCHAR},
+      zchild = #{zchild,jdbcType=VARCHAR},
+      zhome = #{zhome,jdbcType=VARCHAR}
+    where zuid = #{zuid,jdbcType=INTEGER}
+  </update>
+</mapper>
