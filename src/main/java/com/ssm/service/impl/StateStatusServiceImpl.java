@@ -28,7 +28,7 @@ public class StateStatusServiceImpl implements IStateStatusService {
 
     @Override
     public StateStatus selectByPrimaryKey(Integer asid) {
-        return null;
+        return stateStatusMapper.selectByPrimaryKey(asid);
     }
 
     @Override
@@ -39,5 +39,10 @@ public class StateStatusServiceImpl implements IStateStatusService {
     @Override
     public int updateByPrimaryKey(StateStatus record) {
         return 0;
+    }
+
+    @Override
+    public StateStatus selectByAuserid(Integer asid) {
+        return stateStatusMapper.selectByAuserid(asid);
     }
 }

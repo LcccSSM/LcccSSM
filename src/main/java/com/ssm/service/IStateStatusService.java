@@ -1,7 +1,6 @@
 package com.ssm.service;
 
 import com.ssm.model.StateStatus;
-import org.springframework.stereotype.Repository;
 
 public interface IStateStatusService {
     int deleteByPrimaryKey(Integer asid);
@@ -15,4 +14,7 @@ public interface IStateStatusService {
     int updateByPrimaryKeySelective(StateStatus record);
 
     int updateByPrimaryKey(StateStatus record);
+
+    //根据用户ID查询实名信息
+    StateStatus selectByAuserid(Integer asid);
 }

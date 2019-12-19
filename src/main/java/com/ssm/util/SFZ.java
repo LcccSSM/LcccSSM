@@ -14,7 +14,7 @@ import java.util.Map;
 public class SFZ {
     public static String postForm(Map<String, String> params) throws IOException {
         String url = "https://eid.shumaidata.com/eid/check";
-        String appCode = "dc478afb65494543818552bd2a55d2d5";
+        String appCode = "54c60f24d73c45dd8c7555635d507084 ";
         OkHttpClient client = new OkHttpClient.Builder().build();
         FormBody.Builder formbuilder = new FormBody.Builder();
         Iterator<String> it = params.keySet().iterator();
@@ -31,10 +31,10 @@ public class SFZ {
     }
 
     public static void main(String[] args) throws IOException {
-//        Map<String, String> params = new HashMap<>();
-//        params.put("idcard", "430523200002184375");
-//        params.put("name", "陈世强");
-//        String result = postForm( params);
-//        System.out.println(result);
+        Map<String, String> params = new HashMap<>();
+        params.put("idcard", "430523200002184375");
+        params.put("name", "李康");
+        String result = postForm( params);
+        System.out.println(result);
     }
 }

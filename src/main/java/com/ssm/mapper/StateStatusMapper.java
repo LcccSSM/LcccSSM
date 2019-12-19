@@ -16,4 +16,8 @@ public interface StateStatusMapper {
     int updateByPrimaryKeySelective(StateStatus record);
 
     int updateByPrimaryKey(StateStatus record);
+
+    //根据用户ID查询实名信息
+    StateStatus selectByAuserid(Integer asid);
+
 }

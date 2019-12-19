@@ -69,13 +69,14 @@ public class UserAccountController {
     @RequestMapping(value="/getSFZ",produces="text/html;charset=UTF-8")
     @ResponseBody
     public String getSFZ(String idCard ,String name){
-
         Map<String, String> params = new HashMap<>();
         params.put("idcard", idCard);
         params.put("name", name);
         String result = null;
         try {
+            System.out.println("jinlaile");
             result = SFZ.postForm( params);
+            System.out.println("result1    :"+result);
         } catch (IOException e) {
            throw new RuntimeException(e);
         }

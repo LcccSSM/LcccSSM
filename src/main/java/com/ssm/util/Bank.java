@@ -39,8 +39,9 @@ public class Bank {
             System.out.println("lk::"+response.toString());//如不输出json, 请打开这行代码，打印调试头部状态码。
             //状态码: 200 正常；400 URL无效；401 appCode错误； 403 次数用完； 500 API网管错误
             //获取response的body
-            System.out.println(EntityUtils.toString(response.getEntity()));
-            return EntityUtils.toString(response.getEntity());
+            String s = EntityUtils.toString(response.getEntity());
+            System.out.println("lk:   "+s);
+            return s;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

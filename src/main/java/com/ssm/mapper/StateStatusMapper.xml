@@ -22,6 +22,12 @@
     from t_state_status
     where asid = #{asid,jdbcType=INTEGER}
   </select>
+  <select id="selectByAuserid" resultType="com.ssm.model.StateStatus">
+    select
+    <include refid="Base_Column_List" />
+    from t_state_status
+    where auserid = #{auserid,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_state_status
     where asid = #{asid,jdbcType=INTEGER}
