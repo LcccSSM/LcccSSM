@@ -36,7 +36,7 @@
         <redis.version>2.9.0</redis.version>
         <redis.spring.version>1.7.1.RELEASE</redis.spring.version>
         <!--shiro版本-->
-        <shiro-version>1.2.5</shiro-version>
+        <shiro-version>1.10.0</shiro-version>
         <!--阿里云-->
         <aliyun-version>4.4.3</aliyun-version>
         <aliyun2-version>4.0.3</aliyun2-version>
